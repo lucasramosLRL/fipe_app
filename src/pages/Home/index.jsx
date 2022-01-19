@@ -13,11 +13,9 @@ const Home = () => {
         (data) => {
           setIsLoaded(true);
           setData(data);
-          console.log(data);
         },(error) => {
           setIsLoaded(true);
           setError(error);
-          console.log(error);
         }
       )
   }, []);
@@ -29,9 +27,9 @@ const Home = () => {
   } else {
     return (
       <ul>
-        {data.map( marca => (
-          <li key={marca.codigo}>
-            <Link to={`/modelos/${marca.codigo}`}>{marca.nome}</Link>
+        {data.map( brand => (
+          <li key={brand.codigo}>
+            <Link to={`/models/${brand.codigo}`}>{brand.nome}</Link>
           </li>
         ))}
       </ul>
